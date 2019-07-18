@@ -1,10 +1,15 @@
 #!/usr/bin/python
 
-import math
-
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
 
+  for k in recipe:
+    if k in ingredients:
+      batches.append(ingredients[k] // recipe[k])
+    else:
+      return 0
+      
+  return min(batches)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
